@@ -1,0 +1,16 @@
+Algorithm
+
+1. Create a Set - this does not exist in go so we create at new type with map[string]struct{}
+2. Add words to Set, create a map string:count
+3. Loop over words, calling recursive function trace(). Set the result to maxLen = max(trace(), prev)
+4. Trace:
+  * takes a Set, word:count map, word) -> count
+  * checks if word is in word:count map, if so return
+  * builds all permutations of word, by looping over word
+      * p := word[:i] + word[i+1:]
+    * check if permutation is in Set
+      * if so recursivly call Trace
+        * result sets count = max(Trace(), count)
+  * map word:count = count + 1
+  * return count with return mapWordCount[word] 
+
