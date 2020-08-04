@@ -19,13 +19,14 @@ Algorithm
 2. Add words to Set, create a map string:count
 3. Loop over words, calling recursive function trace(). Set the result to maxLen = max(trace(), prev)
 4. Trace:
-  * takes a Set, word:count map, word) -> count
-  * checks if word is in word:count map, if so return
-  * builds all permutations of word, by looping over word
+    * takes a Set, word:count map, word 
+    * Trace returns count
+  * First check if word is in word:count map, if so return
+  * Next, Build all permutations of word, by looping over word
       * p := word[:i] + word[i+1:]
     * check if permutation is in Set
       * if so recursivly call Trace
-        * result sets count = max(Trace(), count)
-  * map word:count = count + 1
-  * return count with return mapWordCount[word] 
+        * set count = max(Trace(), count)
+  * increment map, with result from recursion. word:count = count + 1
+  * return the count for each word
 

@@ -1,7 +1,5 @@
 package main
 
-import ()
-
 // custom implementation of set data structure since no native implementation in go-lang
 type Set map[string]struct{}
 
